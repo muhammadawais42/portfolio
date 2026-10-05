@@ -1,402 +1,876 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muhammad Awais - Portfolio">
-    <title>Muhammad Awais | Software Engineer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Muhammad Awais | Software Engineer & AI Enthusiast</title>
+  <meta name="title" content="Muhammad Awais | Software Engineer & AI Enthusiast">
+  <meta name="description" content="Portfolio of Muhammad Awais - Software Engineer specializing in Machine Learning, Computer Vision, Flutter mobile apps, and scalable full-stack development.">
+  <meta name="keywords" content="Muhammad Awais, Software Engineer, Machine Learning, Flutter Developer, Python, OpenCV, Android Developer, Web Developer, Islamabad, Portfolio">
+  <meta name="author" content="Muhammad Awais">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#090a0f">
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
-        rel="stylesheet">
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadawais42.github.io/portfolio/">
+  <meta property="og:title" content="Muhammad Awais | Software Engineer & AI Enthusiast">
+  <meta property="og:description" content="Explore projects in Machine Learning, Computer Vision, Flutter mobile apps, and Full-Stack development by Muhammad Awais.">
+  <meta property="og:image" content="assets/images/agri_ai.jpg">
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://muhammadawais42.github.io/portfolio/">
+  <meta property="twitter:title" content="Muhammad Awais | Software Engineer & AI Enthusiast">
+  <meta property="twitter:description" content="Explore projects in Machine Learning, Computer Vision, Flutter mobile apps, and Full-Stack development.">
+  <meta property="twitter:image" content="assets/images/agri_ai.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Structured JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Awais",
+    "url": "https://muhammadawais42.github.io/portfolio/",
+    "jobTitle": "Software Engineer",
+    "alumniOf": "Capital University of Science and Technology",
+    "knowsAbout": ["Machine Learning", "Computer Vision", "Flutter", "Python", "Full-Stack Development", "Android"],
+    "sameAs": [
+      "https://github.com/muhammadawais42",
+      "https://www.linkedin.com/in/muhammad-awais-092620270/"
+    ]
+  }
+  </script>
 </head>
 
-<body class="loading">
-    <div class="custom-cursor"></div>
-    <div class="custom-cursor-follower"></div>
+<body>
+  <!-- Ambient Particle Canvas & Background Glows -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-glow top-right"></div>
+  <div class="ambient-glow bottom-left"></div>
 
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Navigation Bar -->
+  <header>
     <nav class="navbar" id="navbar">
-        <div class="nav-content">
-            <div class="logo">M. Awais</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+      <div class="container nav-container">
+        <a href="#home" class="nav-logo" aria-label="Muhammad Awais Home">
+          <div class="nav-logo-badge">MA</div>
+          <span>Muhammad Awais</span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Theme Switcher -->
+          <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark/Light Mode">
+            <i data-lucide="sun"></i>
+          </button>
+
+          <!-- Resume Download Button in Navbar -->
+          <a href="#contact" class="btn btn-primary btn-sm">
+            <span>Hire Me</span>
+            <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Open Mobile Menu">
+            <i data-lucide="menu"></i>
+          </button>
         </div>
+      </div>
     </nav>
+  </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-bg">
-                <div class="gradient-sphere"></div>
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer-overlay" id="drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="nav-logo">
+        <div class="nav-logo-badge">MA</div>
+        <span>M. Awais</span>
+      </div>
+      <button class="theme-toggle-btn" id="mobile-close" aria-label="Close Menu">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-links">
+      <a href="#home" class="mobile-nav-link"><i data-lucide="home"></i> Home</a>
+      <a href="#about" class="mobile-nav-link"><i data-lucide="user"></i> About & Skills</a>
+      <a href="#education" class="mobile-nav-link"><i data-lucide="graduation-cap"></i> Education & Research</a>
+      <a href="#experience" class="mobile-nav-link"><i data-lucide="briefcase"></i> Experience</a>
+      <a href="#projects" class="mobile-nav-link"><i data-lucide="code-2"></i> Featured Projects</a>
+      <a href="#contact" class="mobile-nav-link"><i data-lucide="mail"></i> Get In Touch</a>
+    </div>
+
+    <div style="margin-top: auto; padding-top: 2rem;">
+      <a href="mailto:awaismuhammad7823@gmail.com" class="btn btn-primary" style="width: 100%;">
+        <i data-lucide="send"></i> Let's Connect
+      </a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ====================================================================
+         HERO SECTION
+         ==================================================================== -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Text Content -->
+          <div class="hero-text-col reveal-on-scroll">
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              <span>Available for Software Engineer & AI Roles</span>
             </div>
 
-            <div class="hero-content">
-                <div class="reveal-text">
-                    <p class="subtitle">Software Engineer & AI Enthusiast</p>
-                </div>
-                <div class="reveal-text">
-                    <h1 class="title">Muhammad<br><span>Awais</span></h1>
-                </div>
-                <div class="reveal-text">
-                    <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin-top: 1.5rem;">
-                        Crafting innovative applications, from intelligent machine learning systems to robust mobile and
-                        web platforms.</p>
-                </div>
+            <h1 class="hero-title">
+              Hi, I'm <br>
+              <span class="gradient-text">Muhammad Awais</span>
+            </h1>
 
-                <div class="scroll-indicator">
-                    <div class="mouse">
-                        <div class="wheel"></div>
-                    </div>
-                </div>
+            <div class="hero-role-wrapper">
+              <span>A dedicated</span>
+              <span class="role-typing" id="role-typing"></span>
             </div>
-        </section>
 
-        <!-- About & Education Section -->
-        <section id="about" class="about">
-            <div class="section-container">
-                <h2 class="section-title"><span>01.</span> About & Education</h2>
-                <div class="about-layout"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 4rem;">
+            <p class="hero-description">
+              Crafting high-performance digital solutions across Machine Learning, Computer Vision pipelines, robust Flutter mobile apps, and scalable full-stack web platforms.
+            </p>
 
-                    <div class="about-text fade-in-up">
-                        <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem;">I am a passionate
-                            Software Engineer with expertise in modern programming, Machine Learning, and Full-Stack
-                            Development. I thrive on building performance-optimized, scalable, and user-friendly digital
-                            solutions.</p>
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore Featured Work</span>
+                <i data-lucide="sparkles" style="width: 18px; height: 18px;"></i>
+              </a>
 
-                        <h3 class="edu-title" style="margin-top: 2rem;">Skills & Competencies</h3>
-
-                        <div class="skills-category" style="margin-bottom: 1.5rem;">
-                            <strong
-                                style="display:block; margin-bottom: 0.8rem; color: var(--text-main);">Programming</strong>
-                            <div class="skills">
-                                <span class="skill-tag">Flutter (Dart)</span>
-                                <span class="skill-tag">Java & Kotlin</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">C/C++</span>
-                                <span class="skill-tag">PHP (Laravel)</span>
-                            </div>
-                        </div>
-
-                        <div class="skills-category" style="margin-bottom: 1.5rem;">
-                            <strong style="display:block; margin-bottom: 0.8rem; color: var(--text-main);">Machine
-                                Learning & AI</strong>
-                            <div class="skills">
-                                <span class="skill-tag">OpenCV</span>
-                                <span class="skill-tag">NumPy & Pandas</span>
-                                <span class="skill-tag">EAR/MAR Algorithms</span>
-                                <span class="skill-tag">Head Pose & Gaze Tracking</span>
-                            </div>
-                        </div>
-
-                        <div class="skills-category" style="margin-bottom: 1.5rem;">
-                            <strong style="display:block; margin-bottom: 0.8rem; color: var(--text-main);">Web, DB &
-                                Tools</strong>
-                            <div class="skills">
-                                <span class="skill-tag">MERN Stack (React, Node)</span>
-                                <span class="skill-tag">Flask & Bootstrap</span>
-                                <span class="skill-tag">MySQL & Firebase</span>
-                                <span class="skill-tag">Unity</span>
-                                <span class="skill-tag">Android Studio & Arduino</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-timeline fade-in-up" style="--delay: 0.2s">
-                        <h3 class="edu-title">Education History</h3>
-                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                            <!-- Degree 1 -->
-                            <div class="edu-card">
-                                <h4>BS (Software Engineering)</h4>
-                                <p>Capital University of Science and Technology (CUST), Islamabad</p>
-                                <div class="edu-tags">
-                                    <span>📅 2022 - 2026</span>
-                                    <span>⭐ CGPA: 3.12 / 4.00</span>
-                                </div>
-                            </div>
-                            <!-- Degree 2 -->
-                            <div class="edu-card">
-                                <h4>HSSC (Pre-engineering)</h4>
-                                <p>Punjab College, Ayub Park Campus (PGCAPC), Rawalpindi</p>
-                                <div class="edu-tags">
-                                    <span>📅 2020 - 2022</span>
-                                    <span>⭐ Marks: 669/1100</span>
-                                </div>
-                            </div>
-                            <!-- Degree 3 -->
-                            <div class="edu-card">
-                                <h4>SSC (Science)</h4>
-                                <p>Dr. A Q Khan, School and College of Science and Technology, Islamabad</p>
-                                <div class="edu-tags">
-                                    <span>📅 2018 - 2020</span>
-                                    <span>⭐ Marks: 827/1100</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="edu-title" style="margin-top: 2.5rem;">Honors, Awards & Certifications</h3>
-                        <div class="glass-card" style="padding: 1.5rem; margin-top: 1rem;">
-                            <ul
-                                style="list-style: none; padding-left: 0; color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">
-                                <li style="margin-bottom: 0.5rem;">🏆 <strong>Robotics Participation Award</strong>
-                                    (PGC)</li>
-                                <li style="margin-bottom: 0.5rem;">🏆 <strong>Published Articles</strong> related to AI
-                                    on ScienceOpen</li>
-                                <li style="margin-bottom: 0.5rem;">🏆 <strong>Work Appreciation Award</strong> (Kamcon
-                                    Engineering)</li>
-                                <li style="margin-bottom: 0.5rem;">📜 <strong>C++/ C Specialization</strong> from
-                                    Coursera</li>
-                                <li style="margin-bottom: 0.5rem;">📜 <strong>Robotics Certification</strong> -
-                                    Successfully completed training in robotics fundamentals, control systems, and
-                                    design.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+              <a href="mailto:awaismuhammad7823@gmail.com?subject=Resume%20Request%20-%20Muhammad%20Awais" class="btn btn-secondary" id="resume-download-btn">
+                <i data-lucide="file-text" style="width: 18px; height: 18px;"></i>
+                <span>Request Resume / CV</span>
+              </a>
             </div>
-        </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="experience"
-            style="background: rgba(0,0,0,0.02); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
-            <div class="section-container">
-                <h2 class="section-title"><span>02.</span> Professional Experience</h2>
-                <div class="exp-grid"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
-
-                    <!-- Exp 1 -->
-                    <div class="glass-card fade-in-up">
-                        <h3 style="color: var(--accent); font-size: 1.3rem; margin-bottom: 0.3rem;">Android Developer
-                            Intern</h3>
-                        <strong
-                            style="color: var(--text-main); font-family: var(--font-mono); font-size: 0.9rem;">MobiPixels
-                            | July 2025 – Sept 2025</strong>
-                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem;">Worked as an Android
-                            Developer, developing and maintaining mobile applications, implementing user-friendly
-                            features, and collaborating with cross-functional teams to deliver performance-optimized
-                            apps.</p>
-                    </div>
-
-                    <!-- Exp 2 -->
-                    <div class="glass-card fade-in-up" style="--delay: 0.1s">
-                        <h3 style="color: var(--accent); font-size: 1.3rem; margin-bottom: 0.3rem;">Machine Learning
-                            Intern</h3>
-                        <strong style="color: var(--text-main); font-family: var(--font-mono); font-size: 0.9rem;">Arch
-                            Technologies | Oct 2025 – Nov 2025</strong>
-                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem;">Performed applied
-                            machine learning tasks including data preprocessing, exploratory data analysis, feature
-                            engineering, model development, and performance evaluation using Python-based libraries.</p>
-                    </div>
-
-                    <!-- Exp 3 -->
-                    <div class="glass-card fade-in-up" style="--delay: 0.2s">
-                        <h3 style="color: var(--accent); font-size: 1.3rem; margin-bottom: 0.3rem;">Software
-                            Administrator</h3>
-                        <strong
-                            style="color: var(--text-main); font-family: var(--font-mono); font-size: 0.9rem;">Kamcon
-                            Engineering | Mar 2025 – May 2025</strong>
-                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem;">Contributed to the
-                            development and maintenance of internal software systems, providing technical support,
-                            system administration, and ensuring smooth IT operations across the organization.</p>
-                    </div>
-
-                    <!-- Exp 4 -->
-                    <div class="glass-card fade-in-up" style="--delay: 0.3s">
-                        <h3 style="color: var(--accent); font-size: 1.3rem; margin-bottom: 0.3rem;">Volunteer Service
-                            (VIS)</h3>
-                        <strong
-                            style="color: var(--text-main); font-family: var(--font-mono); font-size: 0.9rem;">Jamila
-                            Sultana Foundation (JSF) | July 2024 – Aug 2024</strong>
-                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem;">Volunteered at a
-                            thalassemia care center, supporting patient services, assisting in organizing blood donation
-                            drives, and contributing to community outreach efforts to raise awareness.</p>
-                    </div>
-
-                </div>
+            <!-- Social Links -->
+            <div class="hero-socials">
+              <a href="https://github.com/muhammadawais42" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="GitHub Profile">
+                <i data-lucide="github" style="width: 16px; height: 16px;"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/muhammad-awais-092620270/" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="LinkedIn Profile">
+                <i data-lucide="linkedin" style="width: 16px; height: 16px;"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://www.scienceopen.com" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="Published Research on ScienceOpen">
+                <i data-lucide="book-open" style="width: 16px; height: 16px;"></i>
+                <span>Research</span>
+              </a>
+              <a href="mailto:awaismuhammad7823@gmail.com" class="social-pill" aria-label="Email Directly">
+                <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
+                <span>Email</span>
+              </a>
             </div>
-        </section>
+          </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="section-container">
-                <h2 class="section-title"><span>03.</span> Featured Projects</h2>
-
-                <!-- FYP Highlighted -->
-                <div class="glass-card fade-in-up"
-                    style="margin-bottom: 3rem; background: linear-gradient(135deg, rgba(67, 56, 202, 0.05), rgba(0,0,0, 0.02)); border: 1px solid rgba(67, 56, 202, 0.2);">
-                    <div style="display: flex; gap: 1rem; align-items: baseline; margin-bottom: 1rem;">
-                        <span
-                            style="font-family: var(--font-mono); color: var(--accent); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;">Final
-                            Year Project / Research</span>
-                    </div>
-                    <h3 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--text-main);">Smart AI-Powered
-                        Agriculture System</h3>
-                    <p
-                        style="color: var(--text-muted); font-size: 1.1rem; max-width: 900px; margin-bottom: 1.8rem; line-height: 1.7;">
-                        Developed an intelligent agriculture system to monitor environmental conditions such as soil
-                        moisture, temperature, and humidity, enabling data-driven decision-making and improving crop
-                        management efficiency through automation.</p>
-                    <div class="skills">
-                        <span class="skill-tag" style="padding: 0.5rem 1rem;">Flutter (Dart)</span>
-                        <span class="skill-tag" style="padding: 0.5rem 1rem;">Node.js</span>
-                        <span class="skill-tag" style="padding: 0.5rem 1rem;">MySQL</span>
-                        <span class="skill-tag" style="padding: 0.5rem 1rem;">IoT</span>
-                        <span class="skill-tag" style="padding: 0.5rem 1rem;">Pandas & NumPy</span>
-                        <span class="skill-tag" style="padding: 0.5rem 1rem;">Scikit-learn</span>
-                    </div>
+          <!-- Hero Visual / 3D Avatar Card -->
+          <div class="hero-visual-col reveal-on-scroll">
+            <div class="hero-visual-card">
+              
+              <!-- Floating Card Top Right -->
+              <div class="floating-stat-card top-right">
+                <div class="stat-icon">
+                  <i data-lucide="brain"></i>
                 </div>
-
-                <div class="projects-grid"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
-
-                    <!-- P1 -->
-                    <div class="glass-card fade-in-up">
-                        <h4 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--text-main);">AI Emotion
-                            Detection System</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Built a real-time facial emotion
-                            recognition system using OpenCV to classify multiple expressions, optimizing the processing
-                            pipeline to improve efficiency and enable scalable integration.</p>
-                    </div>
-
-                    <!-- P2 -->
-                    <div class="glass-card fade-in-up" style="--delay: 0.1s">
-                        <h4 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--text-main);">Smart Attendance
-                            System</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">An AI-powered attendance solution using
-                            Python and OpenCV, enabling real-time face detection and recognition to automate attendance
-                            tracking and prevent proxy entries.</p>
-                    </div>
-
-                    <!-- P3 -->
-                    <div class="glass-card fade-in-up" style="--delay: 0.2s">
-                        <h4 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--text-main);">POS System &
-                            Online Store</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Developed a web-based POS and
-                            e-commerce platform using PHP and MySQL, featuring separate admin and cashier dashboards for
-                            efficient sales processing and inventory management.</p>
-                    </div>
-
-                    <!-- P4 -->
-                    <div class="glass-card fade-in-up">
-                        <h4 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--text-main);">Tasbih App</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">A lightweight mobile application built
-                            with Flutter to facilitate digital tasbih counting. Features an intuitive interface,
-                            persistent count tracking, and customizable settings.</p>
-                    </div>
-
-                    <!-- P5 -->
-                    <div class="glass-card fade-in-up" style="--delay: 0.1s">
-                        <h4 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--text-main);">Expense Tracker
-                            App</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">An Android app using Java/Kotlin and
-                            XML with local DB integration to track and categorize daily expenses, providing real-time
-                            balances and simple UX.</p>
-                    </div>
-
-                    <!-- P6 -->
-                    <div class="glass-card fade-in-up" style="--delay: 0.2s">
-                        <h4 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--text-main);">Infinite Rush
-                            (Car Game)</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">An endless runner-style car game using
-                            Unity, featuring dynamic obstacle generation, smooth controls, and increasing difficulty
-                            progression to enhance replayability.</p>
-                    </div>
-
-                    <!-- P7 -->
-                    <div class="glass-card fade-in-up">
-                        <h4 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--text-main);">Art Gallery
-                            Website</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Developed a full-stack web application
-                            using Java, SQL, HTML, and CSS to showcase artwork, manage gallery listings, and handle
-                            structured data storage easily.</p>
-                    </div>
-
-                    <!-- P8 -->
-                    <div class="glass-card fade-in-up" style="--delay: 0.1s">
-                        <h4 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--text-main);">Book Library App
-                        </h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Built an Android application using
-                            Java, XML, and SQLite to manage book records, allowing users to efficiently add, view,
-                            search, and organize library data.</p>
-                    </div>
-
+                <div class="stat-info">
+                  <h4>Specialization</h4>
+                  <p>Applied AI & Vision</p>
                 </div>
-            </div>
-        </section>
+              </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="section-container">
-                <h2 class="section-title"><span>04.</span> Get in Touch</h2>
+              <!-- Avatar Wrapper with morphing gradient -->
+              <div class="avatar-wrapper">
+                <img src="assets/images/avatar.jpg" alt="Muhammad Awais - Software Engineer" class="avatar-img" width="320" height="320" loading="eager">
+              </div>
 
-                <div class="contact-details"
-                    style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 600px; margin: 0 auto;">
-                    <p class="contact-text" style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-                        If you are looking to hire or collaborate, feel free to reach out via email or connect with me
-                        on LinkedIn.</p>
-
-                    <div class="glass-card"
-                        style="padding: 2rem; width: 100%; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 1rem; text-align: left;">
-
-                        <div
-                            style="display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.8rem;">
-                            <span
-                                style="font-family: var(--font-mono); color: var(--accent); min-width: 80px; font-weight: 500;">Name:</span>
-                            <span style="color: var(--text-main);">Muhammad Awais</span>
-                        </div>
-
-                        <div
-                            style="display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.8rem;">
-                            <span
-                                style="font-family: var(--font-mono); color: var(--accent); min-width: 80px; font-weight: 500;">Reg
-                                #:</span>
-                            <span style="color: var(--text-main);">BSE223112</span>
-                        </div>
-
-                        <div
-                            style="display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.8rem;">
-                            <span
-                                style="font-family: var(--font-mono); color: var(--accent); min-width: 80px; font-weight: 500;">Mobile:</span>
-                            <span style="color: var(--text-main);">0333-9810182</span>
-                        </div>
-
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <span
-                                style="font-family: var(--font-mono); color: var(--accent); min-width: 80px; font-weight: 500;">Email:</span>
-                            <a href="mailto:awaismuhammad7823@gmail.com"
-                                style="color: var(--text-main); font-weight: 600;">awaismuhammad7823@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <a href="mailto:awaismuhammad7823@gmail.com" class="btn-primary">
-                        <span class="btn-bg"></span>
-                        <span class="btn-text">Email Me Directly</span>
-                    </a>
+              <!-- Floating Card Bottom Left -->
+              <div class="floating-stat-card bottom-left">
+                <div class="stat-icon">
+                  <i data-lucide="smartphone"></i>
                 </div>
-            </div>
-        </section>
-    </main>
+                <div class="stat-info">
+                  <h4>Cross-Platform</h4>
+                  <p>Flutter & Kotlin Apps</p>
+                </div>
+              </div>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Muhammad Awais. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="https://github.com/muhammadawais42" target="_blank" rel="noopener noreferrer">Github</a>
-                <a href="https://www.linkedin.com/in/muhammad-awais-092620270/" target="_blank"
-                    rel="noopener noreferrer">LinkedIn</a>
             </div>
+          </div>
+
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="main.js"></script>
+    <!-- ====================================================================
+         ABOUT & CORE COMPETENCIES SECTION
+         ==================================================================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">01. Overview</div>
+          <h2 class="section-title">About Me & Technical Matrix</h2>
+          <p class="section-subtitle">A blend of academic rigor, hands-on software engineering, and applied artificial intelligence.</p>
+        </div>
+
+        <div class="about-grid">
+          
+          <!-- Bio & Core Stats -->
+          <div class="about-bio reveal-on-scroll">
+            <p>
+              I am a passionate <strong>Software Engineer</strong> with deep interest in building intelligent, scalable, and user-centric systems. My journey spans developing computer vision classification pipelines with OpenCV, architecting responsive cross-platform mobile apps using Flutter, and building enterprise-grade full-stack backends.
+            </p>
+            <p>
+              I thrive on engineering performance-optimized architectures, tackling complex algorithmic challenges, and translating cutting-edge AI research into production-ready software.
+            </p>
+
+            <div class="about-stats">
+              <div class="stat-box">
+                <span class="number">3+</span>
+                <span class="label">Years Coding</span>
+              </div>
+              <div class="stat-box">
+                <span class="number">10+</span>
+                <span class="label">Projects Built</span>
+              </div>
+              <div class="stat-box">
+                <span class="number">01</span>
+                <span class="label">Published Paper</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categorized Skills Grid -->
+          <div class="skills-wrapper reveal-on-scroll">
+            
+            <!-- Category 1: AI & Machine Learning -->
+            <div class="glass-card skills-category-card tilt-card">
+              <h3>
+                <i data-lucide="cpu" style="width: 20px; height: 20px;"></i>
+                Machine Learning & AI
+              </h3>
+              <div class="skills-pill-group">
+                <span class="skill-badge"><i data-lucide="eye" style="width: 14px; height: 14px;"></i> OpenCV</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">NumPy & Pandas</span>
+                <span class="skill-badge">Scikit-learn</span>
+                <span class="skill-badge">EAR/MAR Facial Algorithms</span>
+                <span class="skill-badge">Head Pose & Gaze Tracking</span>
+              </div>
+            </div>
+
+            <!-- Category 2: Mobile & Native -->
+            <div class="glass-card skills-category-card tilt-card">
+              <h3>
+                <i data-lucide="smartphone" style="width: 20px; height: 20px;"></i>
+                Mobile & Native Development
+              </h3>
+              <div class="skills-pill-group">
+                <span class="skill-badge">Flutter (Dart)</span>
+                <span class="skill-badge">Kotlin & Java</span>
+                <span class="skill-badge">Android Studio</span>
+                <span class="skill-badge">Room DB & SQLite</span>
+                <span class="skill-badge">Firebase Integration</span>
+              </div>
+            </div>
+
+            <!-- Category 3: Web, Backend & Systems -->
+            <div class="glass-card skills-category-card tilt-card">
+              <h3>
+                <i data-lucide="layers" style="width: 20px; height: 20px;"></i>
+                Full-Stack & Systems
+              </h3>
+              <div class="skills-pill-group">
+                <span class="skill-badge">Node.js & Express</span>
+                <span class="skill-badge">PHP & Laravel</span>
+                <span class="skill-badge">MySQL</span>
+                <span class="skill-badge">C / C++</span>
+                <span class="skill-badge">Unity 3D (C#)</span>
+                <span class="skill-badge">IoT & Arduino</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         EDUCATION & HONORS SECTION
+         ==================================================================== -->
+    <section id="education" class="section education-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">02. Academic Background</div>
+          <h2 class="section-title">Education & Honors</h2>
+          <p class="section-subtitle">Formal foundation in computer science and recognized milestones.</p>
+        </div>
+
+        <div class="edu-grid">
+          
+          <!-- Education Column -->
+          <div class="reveal-on-scroll">
+            <div class="glass-card timeline-card">
+              <div class="degree">Bachelor of Science in Software Engineering</div>
+              <div class="institution">Capital University of Science and Technology (CUST), Islamabad</div>
+              <div class="timeline-meta">
+                <span class="timeline-pill">📅 2022 – 2026</span>
+                <span class="timeline-pill">⭐ CGPA: 3.12 / 4.00</span>
+                <span class="timeline-pill">🎯 Focus: Applied AI & Software Architecture</span>
+              </div>
+            </div>
+
+            <div class="glass-card timeline-card" style="margin-bottom: 0;">
+              <div class="degree">Higher Secondary School Certificate (Pre-Engineering)</div>
+              <div class="institution">Punjab College, Ayub Park Campus (PGCAPC), Rawalpindi</div>
+              <div class="timeline-meta">
+                <span class="timeline-pill">📅 2020 – 2022</span>
+                <span class="timeline-pill">🔬 Physics, Mathematics & Computing Foundations</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Honors & Certifications Column -->
+          <div class="reveal-on-scroll">
+            <div class="honors-list">
+              
+              <div class="honor-item">
+                <div class="honor-icon">📄</div>
+                <div class="honor-content">
+                  <h4>
+                    <span>Published AI Articles</span>
+                    <a href="https://www.scienceopen.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); font-size: 0.85rem; display: inline-flex; align-items: center; gap: 4px;">
+                      <span>ScienceOpen</span>
+                      <i data-lucide="external-link" style="width: 12px; height: 12px;"></i>
+                    </a>
+                  </h4>
+                  <p>Authored and published research articles focusing on artificial intelligence and emerging machine learning applications.</p>
+                </div>
+              </div>
+
+              <div class="honor-item">
+                <div class="honor-icon">📜</div>
+                <div class="honor-content">
+                  <h4>C++ & C Specialization</h4>
+                  <p>Certified by Coursera for advanced object-oriented programming, memory management, and data structures.</p>
+                </div>
+              </div>
+
+              <div class="honor-item">
+                <div class="honor-icon">🏆</div>
+                <div class="honor-content">
+                  <h4>Work Appreciation Award</h4>
+                  <p>Awarded by Kamcon Engineering for exceptional performance in internal software automation and IT reliability.</p>
+                </div>
+              </div>
+
+              <div class="honor-item">
+                <div class="honor-icon">🤖</div>
+                <div class="honor-content">
+                  <h4>Robotics Training & Participation Award</h4>
+                  <p>Completed intensive robotics training covering control systems, sensory feedback, and microcontroller hardware design.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PROFESSIONAL EXPERIENCE SECTION
+         ==================================================================== -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">03. Career Journey</div>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-subtitle">Real-world software engineering, mobile development, and machine learning roles.</p>
+        </div>
+
+        <div class="exp-timeline">
+          
+          <!-- Role 1: MobiPixels -->
+          <div class="glass-card exp-card reveal-on-scroll">
+            <div class="exp-node"></div>
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-title">Android Developer Intern</h3>
+                <div class="exp-company">MobiPixels</div>
+              </div>
+              <span class="exp-period">July 2025 – Sept 2025</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Developed and maintained high-performance native Android and cross-platform mobile modules, improving user experience and UI responsiveness.</li>
+              <li>Collaborated in an agile sprint team to refactor codebase architecture, reducing memory overhead and crash rates.</li>
+              <li>Integrated RESTful APIs and modern state management patterns for real-time mobile data synchronization.</li>
+            </ul>
+          </div>
+
+          <!-- Role 2: Arch Technologies -->
+          <div class="glass-card exp-card reveal-on-scroll">
+            <div class="exp-node"></div>
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-title">Machine Learning Intern</h3>
+                <div class="exp-company">Arch Technologies</div>
+              </div>
+              <span class="exp-period">Oct 2025 – Nov 2025</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Engineered end-to-end data preprocessing, exploratory data analysis (EDA), and feature extraction pipelines in Python with Pandas and NumPy.</li>
+              <li>Trained and benchmarked computer vision models using OpenCV and Scikit-learn for facial landmark and gaze orientation tracking.</li>
+              <li>Optimized inference pipelines for real-time video stream processing with minimal latency.</li>
+            </ul>
+          </div>
+
+          <!-- Role 3: Kamcon Engineering -->
+          <div class="glass-card exp-card reveal-on-scroll">
+            <div class="exp-node"></div>
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-title">Software Administrator</h3>
+                <div class="exp-company">Kamcon Engineering</div>
+              </div>
+              <span class="exp-period">Mar 2025 – May 2025</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Administered internal enterprise software applications, database operations, and user authorization systems.</li>
+              <li>Automated routine data backup procedures and resolved technical incidents, receiving the corporate Work Appreciation Award.</li>
+              <li>Provided cross-department IT infrastructure support to maintain continuous workflow efficiency.</li>
+            </ul>
+          </div>
+
+          <!-- Role 4: Jamila Sultana Foundation -->
+          <div class="glass-card exp-card reveal-on-scroll">
+            <div class="exp-node"></div>
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-title">Volunteer Service (VIS)</h3>
+                <div class="exp-company">Jamila Sultana Foundation (JSF)</div>
+              </div>
+              <span class="exp-period">July 2024 – Aug 2024</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Volunteered at a thalassemia care facility, assisting in donor data coordination and organizing community blood drive campaigns.</li>
+              <li>Supported health awareness outreach initiatives and improved record handling for patient support services.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         FEATURED PROJECTS SHOWCASE SECTION
+         ==================================================================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">04. Portfolio Showcase</div>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Explore selected applications across Artificial Intelligence, Mobile Apps, Full-Stack Systems, and Games.</p>
+        </div>
+
+        <!-- FYP Highlighted Hero Card -->
+        <div class="featured-hero-card reveal-on-scroll">
+          <div class="featured-hero-info">
+            <div class="featured-badge">
+              <i data-lucide="star" style="width: 14px; height: 14px;"></i>
+              <span>Final Year Project & Research</span>
+            </div>
+            <h3 class="featured-hero-title">Smart AI-Powered Agriculture System</h3>
+            <p class="featured-hero-desc">
+              An intelligent, IoT-driven precision agriculture system designed to optimize irrigation and crop yield. Integrates live soil moisture, humidity, and temperature telemetry with predictive machine learning algorithms to automate water distribution and provide actionable farm insights.
+            </p>
+
+            <div class="project-tags" style="margin-bottom: 2rem;">
+              <span class="project-tag">Flutter (Dart)</span>
+              <span class="project-tag">Node.js Broker</span>
+              <span class="project-tag">MySQL</span>
+              <span class="project-tag">IoT Telemetry</span>
+              <span class="project-tag">Scikit-learn & Pandas</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://github.com/muhammadawais42" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i data-lucide="github" style="width: 16px; height: 16px;"></i>
+                <span>GitHub Repo</span>
+              </a>
+              <a href="https://github.com/muhammadawais42" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <i data-lucide="external-link" style="width: 16px; height: 16px;"></i>
+                <span>Live Demo</span>
+              </a>
+              <button class="btn btn-secondary btn-sm open-modal-trigger" data-project="agri-ai">
+                <i data-lucide="maximize-2" style="width: 16px; height: 16px;"></i>
+                <span>Deep Dive</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="project-media-wrapper">
+            <img src="assets/images/agri_ai.jpg" alt="Smart AI-Powered Agriculture System Dashboard" class="project-cover-img" width="640" height="360" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="project-filters reveal-on-scroll">
+          <button class="filter-btn active" data-filter="all">All Projects (7)</button>
+          <button class="filter-btn" data-filter="ai">AI & Machine Learning</button>
+          <button class="filter-btn" data-filter="mobile">Mobile & Flutter</button>
+          <button class="filter-btn" data-filter="web">Full-Stack & Web</button>
+          <button class="filter-btn" data-filter="game">Game Dev</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+
+          <!-- Project 1: Emotion AI -->
+          <div class="glass-card project-card tilt-card reveal-on-scroll" data-category="ai">
+            <div class="project-card-media">
+              <img src="assets/images/emotion_ai.jpg" alt="AI Emotion Detection System" loading="lazy">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">AI Facial Emotion Recognition</h3>
+              <p class="project-desc">Real-time facial expression classifier utilizing OpenCV, landmark localization, and EAR/MAR metrics to evaluate dynamic emotional states and attention.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">OpenCV</span>
+                <span class="project-tag">EAR/MAR</span>
+                <span class="project-tag">Computer Vision</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/muhammadawais42" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" aria-label="GitHub Code">
+                  <i data-lucide="github" style="width: 14px; height: 14px;"></i> GitHub
+                </a>
+                <button class="btn btn-secondary btn-sm open-modal-trigger" data-project="emotion-ai" aria-label="Details">
+                  <i data-lucide="info" style="width: 14px; height: 14px;"></i> Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Smart Attendance -->
+          <div class="glass-card project-card tilt-card reveal-on-scroll" data-category="ai">
+            <div class="project-card-media">
+              <img src="assets/images/emotion_ai.jpg" alt="Smart Attendance System" loading="lazy">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Smart Attendance System</h3>
+              <p class="project-desc">AI-powered biometric face recognition system automating campus attendance logging with anti-spoofing verification and instant SQLite export.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">OpenCV</span>
+                <span class="project-tag">Face Recognition</span>
+                <span class="project-tag">SQLite</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/muhammadawais42" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i data-lucide="github" style="width: 14px; height: 14px;"></i> GitHub
+                </a>
+                <button class="btn btn-secondary btn-sm open-modal-trigger" data-project="attendance-ai">
+                  <i data-lucide="info" style="width: 14px; height: 14px;"></i> Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: OmniSell POS -->
+          <div class="glass-card project-card tilt-card reveal-on-scroll" data-category="web">
+            <div class="project-card-media">
+              <img src="assets/images/pos_store.jpg" alt="POS System & Online Store" loading="lazy">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">OmniSell POS & E-Store</h3>
+              <p class="project-desc">Full-stack point-of-sale platform and web store with real-time inventory management, multi-tier cashier dashboards, and sales analytics.</p>
+              <div class="project-tags">
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">Bootstrap</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/muhammadawais42" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i data-lucide="github" style="width: 14px; height: 14px;"></i> GitHub
+                </a>
+                <button class="btn btn-secondary btn-sm open-modal-trigger" data-project="pos-store">
+                  <i data-lucide="info" style="width: 14px; height: 14px;"></i> Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Flutter Tasbih App -->
+          <div class="glass-card project-card tilt-card reveal-on-scroll" data-category="mobile">
+            <div class="project-card-media">
+              <img src="assets/images/flutter_mobile.jpg" alt="Tasbih App Flutter" loading="lazy">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Digital Tasbih Counter</h3>
+              <p class="project-desc">Lightweight, modern Flutter mobile app offering persistent count memory, smooth tactile haptic feedback, and custom dark/light themes.</p>
+              <div class="project-tags">
+                <span class="project-tag">Flutter</span>
+                <span class="project-tag">Dart</span>
+                <span class="project-tag">Haptics</span>
+                <span class="project-tag">Cross-Platform</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/muhammadawais42" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i data-lucide="github" style="width: 14px; height: 14px;"></i> GitHub
+                </a>
+                <button class="btn btn-secondary btn-sm open-modal-trigger" data-project="tasbih-app">
+                  <i data-lucide="info" style="width: 14px; height: 14px;"></i> Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Android Expense Tracker -->
+          <div class="glass-card project-card tilt-card reveal-on-scroll" data-category="mobile">
+            <div class="project-card-media">
+              <img src="assets/images/flutter_mobile.jpg" alt="Expense Tracker App" loading="lazy">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Smart Expense Tracker</h3>
+              <p class="project-desc">Native Android finance tracker built with Kotlin and Room DB, featuring automated spending visual charts and monthly budget forecasts.</p>
+              <div class="project-tags">
+                <span class="project-tag">Kotlin</span>
+                <span class="project-tag">Java</span>
+                <span class="project-tag">Room DB</span>
+                <span class="project-tag">MPAndroidChart</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/muhammadawais42" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i data-lucide="github" style="width: 14px; height: 14px;"></i> GitHub
+                </a>
+                <button class="btn btn-secondary btn-sm open-modal-trigger" data-project="expense-tracker">
+                  <i data-lucide="info" style="width: 14px; height: 14px;"></i> Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Infinite Rush 3D Game -->
+          <div class="glass-card project-card tilt-card reveal-on-scroll" data-category="game">
+            <div class="project-card-media">
+              <img src="assets/images/unity_game.jpg" alt="Infinite Rush 3D Game" loading="lazy">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Infinite Rush 3D Cyber Racer</h3>
+              <p class="project-desc">High-octane endless runner game built in Unity 3D with procedural obstacle generators, custom car drift physics, and cyber lighting shaders.</p>
+              <div class="project-tags">
+                <span class="project-tag">Unity 3D</span>
+                <span class="project-tag">C# Scripting</span>
+                <span class="project-tag">Game Physics</span>
+                <span class="project-tag">Shaders</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/muhammadawais42" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i data-lucide="github" style="width: 14px; height: 14px;"></i> GitHub
+                </a>
+                <button class="btn btn-secondary btn-sm open-modal-trigger" data-project="infinite-rush">
+                  <i data-lucide="info" style="width: 14px; height: 14px;"></i> Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CONTACT & COLLABORATION SECTION
+         ==================================================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">05. Connect</div>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Have a project in mind, an engineering opening, or want to collaborate? My inbox is always open.</p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Info Cards -->
+          <div class="contact-info-cards reveal-on-scroll">
+            
+            <div class="glass-card contact-card">
+              <div class="contact-card-icon">
+                <i data-lucide="mail"></i>
+              </div>
+              <div class="contact-card-text" style="flex-grow: 1;">
+                <h4>Email Address</h4>
+                <a href="mailto:awaismuhammad7823@gmail.com">awaismuhammad7823@gmail.com</a>
+              </div>
+              <button class="btn btn-secondary btn-sm btn-icon" id="copy-email-btn" title="Copy Email">
+                <i data-lucide="copy" style="width: 16px; height: 16px;"></i>
+              </button>
+            </div>
+
+            <div class="glass-card contact-card">
+              <div class="contact-card-icon">
+                <i data-lucide="linkedin"></i>
+              </div>
+              <div class="contact-card-text">
+                <h4>LinkedIn Network</h4>
+                <a href="https://www.linkedin.com/in/muhammad-awais-092620270/" target="_blank" rel="noopener noreferrer">linkedin.com/in/muhammad-awais-092620270/</a>
+              </div>
+            </div>
+
+            <div class="glass-card contact-card">
+              <div class="contact-card-icon">
+                <i data-lucide="github"></i>
+              </div>
+              <div class="contact-card-text">
+                <h4>GitHub Repositories</h4>
+                <a href="https://github.com/muhammadawais42" target="_blank" rel="noopener noreferrer">github.com/muhammadawais42</a>
+              </div>
+            </div>
+
+            <div class="glass-card contact-card">
+              <div class="contact-card-icon">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <div class="contact-card-text">
+                <h4>Location & Availability</h4>
+                <p>Islamabad, Pakistan • Open to Remote Worldwide</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="glass-card contact-form-container reveal-on-scroll">
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Your Name *</label>
+                <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Morgan" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">Your Email *</label>
+                <input type="email" id="form-email" class="form-input" placeholder="e.g. alex@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label">Subject</label>
+                <input type="text" id="form-subject" class="form-input" placeholder="Software Engineer Opportunity / Project Inquiry">
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Message *</label>
+                <textarea id="form-message" class="form-textarea" placeholder="Hello Muhammad, I came across your portfolio and would like to connect regarding..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <i data-lucide="send" style="width: 16px; height: 16px;"></i>
+                <span>Send Direct Message</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       PROJECT QUICK VIEW MODAL
+       ==================================================================== -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-box" id="modal-box">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Project Modal">
+        <i data-lucide="x"></i>
+      </button>
+
+      <div style="margin-bottom: 1.5rem;">
+        <span class="project-tag" id="modal-badge" style="background: rgba(99, 102, 241, 0.2); border-color: rgba(99, 102, 241, 0.4); color: var(--text-accent);">Project Overview</span>
+        <h3 id="modal-title" style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-top: 0.5rem;">Project Title</h3>
+      </div>
+
+      <div class="project-media-wrapper" style="margin-bottom: 1.5rem;">
+        <img src="" alt="Project Preview" id="modal-cover" class="project-cover-img" style="aspect-ratio: 16/9;">
+      </div>
+
+      <p id="modal-desc" style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;"></p>
+
+      <h4 style="color: var(--text-main); font-size: 1.05rem; margin-bottom: 0.75rem;">Key Engineering Highlights:</h4>
+      <ul id="modal-metrics" class="exp-bullets" style="margin-bottom: 1.5rem;"></ul>
+
+      <div id="modal-tags" class="project-tags" style="margin-bottom: 2rem;"></div>
+
+      <div class="project-actions">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" id="modal-github">
+          <i data-lucide="github" style="width: 16px; height: 16px;"></i> View Code Repository
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="modal-demo">
+          <i data-lucide="external-link" style="width: 16px; height: 16px;"></i> Live Demonstration
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        &copy; 2026 <strong>Muhammad Awais</strong>. Engineered for performance & elegance.
+      </div>
+
+      <div class="footer-text">
+        <a href="#home" class="back-to-top-btn">
+          <span>Back to Top</span>
+          <i data-lucide="arrow-up" style="width: 16px; height: 16px;"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
